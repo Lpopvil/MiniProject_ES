@@ -1,0 +1,18 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../matmul_tb.cpp in debug mode
+   Generating csim.exe
+
+NN Prediction: 0
+
+
+NN Prediction: 1
+
+
+NN Prediction: 0
+
+Success
+WARNING: Hls::stream 'hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul>, 0>.2' contains leftover data, which may result in RTL simulation hanging.
+The maximum depth reached by any of the 2 hls::stream() instances in the design is 100
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

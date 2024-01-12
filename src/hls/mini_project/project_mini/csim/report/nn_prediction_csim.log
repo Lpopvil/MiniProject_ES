@@ -1,0 +1,117 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../matmul_tb.cpp in debug mode
+../../../../matmul_tb.cpp: In function ‘int main()’:
+../../../../matmul_tb.cpp:23:23: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::write(float [100])’
+  input.write(input_img);
+                       ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note: candidate: void hls::stream<__STREAM_T__, 0>::write(const __STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void write(const __STREAM_T__& tail) {
+          ^~~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note:   no known conversion for argument 1 from ‘float [100]’ to ‘const hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+../../../../matmul_tb.cpp:24:36: error: invalid initialization of reference of type ‘hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&’ from expression of type ‘float [100]’
+  int pred = nn_prediction(input_img);
+                                    ^
+In file included from ../../../../matmul_tb.cpp:3:0:
+../../../../matmul.hpp:19:5: note: in passing argument 1 of ‘int nn_prediction(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&)’
+ int nn_prediction(hls::stream< mydata_t > &input,hls::stream< mydata_t > &output);
+     ^~~~~~~~~~~~~
+../../../../matmul_tb.cpp:25:18: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::read(int&)’
+  output.read(pred);
+                  ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note: candidate: void hls::stream<__STREAM_T__, 0>::read(__STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void read(__STREAM_T__& head) {
+          ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note:   no known conversion for argument 1 from ‘int’ to ‘hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note: candidate: __STREAM_T__ hls::stream<__STREAM_T__, 0>::read() [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     __STREAM_T__ read() {
+                  ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note:   candidate expects 0 arguments, 1 provided
+../../../../matmul_tb.cpp:40:24: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::write(float [100])’
+  input.write(input_img1);
+                        ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note: candidate: void hls::stream<__STREAM_T__, 0>::write(const __STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void write(const __STREAM_T__& tail) {
+          ^~~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note:   no known conversion for argument 1 from ‘float [100]’ to ‘const hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+../../../../matmul_tb.cpp:41:38: error: invalid initialization of reference of type ‘hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&’ from expression of type ‘float [100]’
+  int pred1 = nn_prediction(input_img1);
+                                      ^
+In file included from ../../../../matmul_tb.cpp:3:0:
+../../../../matmul.hpp:19:5: note: in passing argument 1 of ‘int nn_prediction(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&)’
+ int nn_prediction(hls::stream< mydata_t > &input,hls::stream< mydata_t > &output);
+     ^~~~~~~~~~~~~
+../../../../matmul_tb.cpp:42:19: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::read(int&)’
+  output.read(pred1);
+                   ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note: candidate: void hls::stream<__STREAM_T__, 0>::read(__STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void read(__STREAM_T__& head) {
+          ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note:   no known conversion for argument 1 from ‘int’ to ‘hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note: candidate: __STREAM_T__ hls::stream<__STREAM_T__, 0>::read() [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     __STREAM_T__ read() {
+                  ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note:   candidate expects 0 arguments, 1 provided
+../../../../matmul_tb.cpp:59:24: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::write(float [100])’
+  input.write(input_img2);
+                        ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note: candidate: void hls::stream<__STREAM_T__, 0>::write(const __STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void write(const __STREAM_T__& tail) {
+          ^~~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:255:10: note:   no known conversion for argument 1 from ‘float [100]’ to ‘const hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+../../../../matmul_tb.cpp:60:38: error: invalid initialization of reference of type ‘hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&’ from expression of type ‘float [100]’
+  int pred2 = nn_prediction(input_img2);
+                                      ^
+In file included from ../../../../matmul_tb.cpp:3:0:
+../../../../matmul.hpp:19:5: note: in passing argument 1 of ‘int nn_prediction(hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&, hls::stream<hls::axis<ap_int<32>, 0ul, 0ul, 0ul> >&)’
+ int nn_prediction(hls::stream< mydata_t > &input,hls::stream< mydata_t > &output);
+     ^~~~~~~~~~~~~
+../../../../matmul_tb.cpp:61:19: error: no matching function for call to ‘hls::stream<hls::axis<ap_int<32>, 2ul, 5ul, 6ul> >::read(int&)’
+  output.read(pred2);
+                   ^
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h:61:0,
+                 from ../../../../matmul.hpp:4,
+                 from ../../../../matmul_tb.cpp:3:
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note: candidate: void hls::stream<__STREAM_T__, 0>::read(__STREAM_T__&) [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     void read(__STREAM_T__& head) {
+          ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:223:10: note:   no known conversion for argument 1 from ‘int’ to ‘hls::axis<ap_int<32>, 2ul, 5ul, 6ul>&’
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note: candidate: __STREAM_T__ hls::stream<__STREAM_T__, 0>::read() [with __STREAM_T__ = hls::axis<ap_int<32>, 2ul, 5ul, 6ul>]
+     __STREAM_T__ read() {
+                  ^~~~
+/tools/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h:233:18: note:   candidate expects 0 arguments, 1 provided
+../../../../matmul_tb.cpp:67:2: error: ‘cout’ was not declared in this scope
+  cout << "Success" << endl;
+  ^~~~
+../../../../matmul_tb.cpp:67:2: note: suggested alternative:
+In file included from ../../../../matmul_tb.cpp:2:0:
+/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:61:18: note:   ‘std::cout’
+   extern ostream cout;  /// Linked to standard output
+                  ^~~~
+../../../../matmul_tb.cpp:67:23: error: ‘endl’ was not declared in this scope
+  cout << "Success" << endl;
+                       ^~~~
+../../../../matmul_tb.cpp:67:23: note: suggested alternative:
+In file included from /tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/iostream:39:0,
+                 from ../../../../matmul_tb.cpp:2:
+/tools/Xilinx/Vitis_HLS/2020.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/ostream:590:5: note:   ‘std::endl’
+     endl(basic_ostream<_CharT, _Traits>& __os)
+     ^~~~
+make: *** [csim.mk:73: obj/matmul_tb.o] Error 1
+ERR: [SIM 100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 3] *************** CSIM finish ***************

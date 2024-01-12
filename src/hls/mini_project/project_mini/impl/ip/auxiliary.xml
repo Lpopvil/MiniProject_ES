@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="nn_inference" xd:componentRef="nn_inference" xd:initiationInterval="3841" xd:clockPeriod="12.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:returnValue xd:interfaceRef="ap_return" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="input_img_q0" xd:originalName="input_img_q0" xd:direction="in" xd:interfaceRef="input_img_q0" xd:busTypeRef="ap_memory" xd:arraySize="1" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="3840" xd:worst-case="3840" xd:average-case="3840"/>
+  <xd:resourceEstimates xd:LUT="45834" xd:FF="30225" xd:BRAM="34" xd:DSP="160"/>
+</xd:acceleratorMap>
